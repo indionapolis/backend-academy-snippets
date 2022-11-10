@@ -1,8 +1,8 @@
 import logging
 from typing import Optional
 
-from api_client import TvMazeClient, ClientError
-from models import TvProgramModel
+from .api_client import TvMazeClient, ClientError
+from .models import TvProgramModel
 
 logger = logging.getLogger(__name__)
 

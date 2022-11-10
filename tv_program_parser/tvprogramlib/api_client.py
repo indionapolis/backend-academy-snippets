@@ -1,10 +1,9 @@
-import json
 from typing import Optional, Dict
 import requests
 from pydantic import ValidationError
 from requests import HTTPError, ConnectionError
 from logging import getLogger
-from models import TvProgramModel
+from .models import TvProgramModel
 
 logger = getLogger(__name__)
 
@@ -32,7 +31,7 @@ class TvMazeClient:
     def _fetch(self, endpoint, params) -> Dict:
         try:
             response = requests.get(
-                f"{self.api_base}{endpoint}", params=params, verify=False
+                f"{self.api_base}{endpoint}", params=params
             )
             response.raise_for_status()
 
